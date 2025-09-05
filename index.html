@@ -3,53 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Hugues de Seroux</title>
+    <title>Portfolio CV - Hugues de Seroux</title>
     <link rel="stylesheet" href="styles/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="#parcours">Parcours</a>
-        <a href="#projets">Projets</a>
-        <a href="#competences">Compétences</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <header id="accueil" class="hero" style="background-image: url('images/ariane6.jpg');">
-        <div class="hero-content">
-            <h1>Hugues de Seroux</h1>
-            <p>Étudiant, Chef Scout, Passionné d'aérospatial</p>
+    <!-- En-tête avec image de fond -->
+    <header class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Hugues de Seroux</h1>
+                <p class="subtitle">Étudiant en [ta filière] | Chef Scout | Passionné d'Aérospatial</p>
+                <a href="#projets" class="btn">Voir mes projets</a>
+            </div>
         </div>
     </header>
 
-    <section id="parcours" class="section">
-        <h2>Mon Parcours</h2>
-        <p>Décris ici ton parcours académique et professionnel.</p>
-    </section>
-
-    <section id="projets" class="section">
-        <h2>Mes Projets</h2>
-        <p>Présente tes projets avec des images et des liens.</p>
-    </section>
-
-    <section id="competences" class="section">
-        <h2>Compétences</h2>
+    <!-- Navigation -->
+    <nav class="navbar">
         <ul>
-            <li>Leadership (Chef Scout)</li>
-            <li>Développement web (HTML/CSS/JS)</li>
-            <li>Analyse de données</li>
+            <li><a href="#parcours">Parcours</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
+    </nav>
+
+    <!-- Section Parcours -->
+    <section id="parcours" class="section">
+        <div class="container">
+            <h2><i class="fas fa-graduation-cap"></i> Mon Parcours</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2020 - 2022</div>
+                    <div class="timeline-content">
+                        <h3>Classes Préparatoires</h3>
+                        <p>Filière [précise ta filière], Lycée [nom].</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2018 - 2020</div>
+                    <div class="timeline-content">
+                        <h3>Baccalauréat [mention]</h3>
+                        <p>Lycée [nom], avec mention [si applicable].</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2016 - 2020</div>
+                    <div class="timeline-content">
+                        <h3>Chef Scout</h3>
+                        <p>Responsable d'une équipe de [X] jeunes, organisation d'activités et gestion de projets.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Email : ton.email@example.com</p>
-        <p>LinkedIn : <a href="#">ton-profil-linkedin</a></p>
+    <!-- Section Projets -->
+    <section id="projets" class="section bg-light">
+        <div class="container">
+            <h2><i class="fas fa-rocket"></i> Mes Projets</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/ariane6.jpg" alt="Projet Ariane 6">
+                    <h3>Simulation de Vol Ariane 6</h3>
+                    <p>Développement d'une simulation de trajectoire pour la fusée Ariane 6.</p>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200/0077b6/ffffff?text=Rafale" alt="Projet Rafale">
+                    <h3>Analyse Aérodynamique Rafale</h3>
+                    <p>Étude des performances aérodynamiques de l'avion Rafale.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- Section Compétences -->
+    <section id="competences" class="section">
+        <div class="container">
+            <h2><i class="fas fa-cogs"></i> Compétences</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Techniques</h3>
+                    <ul>
+                        <li>HTML/CSS/JavaScript</li>
+                        <li>Python</li>
+                        <li>Git/GitHub</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Transversales</h3>
+                    <ul>
+                        <li>Leadership</li>
+                        <li>Gestion de projet</li>
+                        <li>Travail d'équipe</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2><i class="fas fa-envelope"></i> Contact</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> [Ta ville], France</p>
+                <p><i class="fas fa-phone"></i> +33 X XX XX XX XX</p>
+                <p><i class="fas fa-envelope"></i> ton.email@example.com</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
     <footer>
-        <p>© 2025 Hugues de Seroux</p>
+        <p>© 2025 Hugues de Seroux | Portfolio CV</p>
     </footer>
 </body>
 </html>
