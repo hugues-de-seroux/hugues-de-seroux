@@ -5,17 +5,281 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Hugues de Seroux</title>
     <link rel="stylesheet" href="styles/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset et polices */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* En-tête héroïque */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 1rem;
+        }
+
+        .navbar ul li {
+            margin: 0 1rem;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: #007BFF;
+        }
+
+        /* Section commune */
+        .section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Timeline pour parcours et expériences */
+        .timeline {
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #007BFF;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: #f9f9f9;
+            border: 4px solid #007BFF;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: #007BFF;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projets */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-card h3 {
+            margin: 1rem 0 0.5rem;
+        }
+
+        .project-card p {
+            padding: 0 1rem 1rem;
+        }
+
+        /* Compétences */
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .skill-category {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+        }
+
+        .skills-icons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* Contact */
+        .contact-info {
+            margin-top: 2rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #333;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #007BFF;
+        }
+
+        /* Pied de page */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Bouton pour les onglets */
+        .tab-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .tab-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <!-- En-tête avec image de fond -->
     <header class="hero">
-        <div class="hero-overlay">
-            <div class="hero-content">
-                <h1>Hugues de Seroux</h1>
-                <p class="subtitle">Ingénieur junior en Simulation Mécanique Numérique / ESILV</p>
-            </div>
+        <div class="hero-content">
+            <h1>Hugues de Seroux</h1>
+            <p class="subtitle">Étudiant Ingénieur en Simulation Mécanique Numérique / ESILV</p>
+            <a href="#parcours" class="tab-button">Parcours Académique</a>
+            <a href="#experiences" class="tab-button">Expérience Professionnelle</a>
+            <a href="#projets" class="tab-button">Projets</a>
+            <a href="#competences" class="tab-button">Compétences</a>
+            <a href="snake-game.html" class="tab-button">Mini-Jeu</a>
+            <a href="#contact" class="tab-button">Contact</a>
         </div>
     </header>
 
@@ -26,162 +290,39 @@
             <li><a href="#experiences">Expérience Professionnelle</a></li>
             <li><a href="#projets">Projets</a></li>
             <li><a href="#competences">Compétences</a></li>
+            <li><a href="snake-game.html">Mini-Jeu</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Section Parcours Académique -->
+    <!-- Sections placeholders -->
     <section id="parcours" class="section">
         <div class="container">
-            <h2><i class="fas fa-graduation-cap"></i> Parcours Académique</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2021 - 2025</div>
-                    <div class="timeline-content">
-                        <h3>Diplôme d'Ingénieur — Majeure Modélisation et Mécanique Numérique</h3>
-                        <p>ESILV, Paris-La Défense</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2022 - 2023</div>
-                    <div class="timeline-content">
-                        <h3>Échange International</h3>
-                        <p>Riga Technical University (RTU), Lettonie</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2019 - 2021</div>
-                    <div class="timeline-content">
-                        <h3>Classe Préparatoire PSI*</h3>
-                        <p>Lycée Berthollet, Annecy</p>
-                    </div>
-                </div>
-            </div>
+            <!-- Contenu du parcours académique ici -->
         </div>
     </section>
 
-    <!-- Section Expérience Professionnelle -->
     <section id="experiences" class="section bg-light">
         <div class="container">
-            <h2><i class="fas fa-briefcase"></i> Expérience Professionnelle</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">02/2025</div>
-                    <div class="timeline-content">
-                        <h3><a href="experiences.html#stage-mbda">Stage — Ingénieur Simulation Numérique</a></h3>
-                        <p>MBDA, Le Plessis-Robinson</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">04/2024 - 08/2024</div>
-                    <div class="timeline-content">
-                        <h3><a href="experiences.html#stage-celeros">Stage — Ingénieur Hydraulicien</a></h3>
-                        <p>Celeros Clyde Union Pump, Annecy</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2021 - 2023</div>
-                    <div class="timeline-content">
-                        <h3><a href="experiences.html#chefs-scout">Chef Scout d'Europe</a></h3>
-                        <p>AGSE, Annecy</p>
-                    </div>
-                </div>
-            </div>
+            <!-- Contenu des expériences professionnelles ici -->
         </div>
     </section>
 
-    <!-- Section Projets -->
     <section id="projets" class="section">
         <div class="container">
-            <h2><i class="fas fa-rocket"></i> Projets Académiques</h2>
-            <div class="projects-grid">
-                <!-- Projet JASPER -->
-                <div class="project-card">
-                    <a href="projets.html#jasper">
-                        <img src="https://mistralaiblackforestprod.blob.core.windows.net/images/blackforest/ec8b/f57f/-cdb/4-46e9-9d54-88fdf04f63f2/image.jpg?se=2025-09-05T15%3A53%3A51Z&sp=r&sv=2025-07-05&sr=b&sig=vnvaPFXWgU2Ke8uxHTnBFOeEYOVcjXCXI/X9aHtFP38%3D" alt="Projet JASPER">
-                        <h3>Robot Humanoïde JASPER</h3>
-                        <p>Développement du robot humanoïde JASPER avec l'association DaVinciBot.</p>
-                    </a>
-                </div>
-                <!-- Projet Maquette Production Automobile -->
-                <div class="project-card">
-                    <a href="projets.html#production-automobile">
-                        <img src="https://via.placeholder.com/300x200/0077b6/ffffff?text=Production+Automobile" alt="Projet Production Automobile">
-                        <h3>Maquette de Chaîne de Production Automobile</h3>
-                        <p>Conception et fabrication d'une maquette en partenariat avec Deloitte.</p>
-                    </a>
-                </div>
-            </div>
+            <!-- Contenu des projets ici -->
         </div>
     </section>
 
-    <!-- Section Compétences -->
     <section id="competences" class="section bg-light">
         <div class="container">
-            <h2><i class="fas fa-cogs"></i> Compétences</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Hard Skills</h3>
-                    <div class="skills-icons">
-                        <img src="https://mistralaiblackforestprod.blob.core.windows.net/images/blackforest/5f45/35e3/-6e0/b-400f-9f5b-16405696a5fc/image.jpg?se=2025-09-05T15%3A53%3A57Z&sp=r&sv=2025-07-05&sr=b&sig=wxbyk3ijy9uuCBdVFPMAhoTbH2J8rc2bpzP6rJGRaxQ%3D" alt="Simulation Mécanique Icon" width="50">
-                        <span>Simulation mécanique, Éléments finis, Conception 3D, Analyse modale et vibratoire, Modélisation thermique et CFD</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Soft Skills</h3>
-                    <div class="skills-icons">
-                        <img src="https://mistralaiblackforestprod.blob.core.windows.net/images/blackforest/9305/cc52/-7a7/d-42df-853a-461df5c2d533/image.jpg?se=2025-09-05T15%3A53%3A55Z&sp=r&sv=2025-07-05&sr=b&sig=PVFocdNFaRGPD0FtouhL1jh6hyRKu8Y4gwJsg%2B1ljus%3D" alt="Project Management Icon" width="50">
-                        <span>Gestion de projet, Rigueur, Esprit d'analyse, Autonomie, Adaptabilité</span>
-                    </div>
-                </div>
-            </div>
+            <!-- Contenu des compétences ici -->
         </div>
     </section>
 
-    <!-- Mini-jeu Snake -->
-    <div id="snake-container" class="no-print">
-        <button id="snake-toggle">Masquer le jeu</button>
-        <div id="snake-game" style="display: block;">
-            <div id="mobile-controls">
-                <div style="display: flex; justify-content: center; margin-bottom: 5px;">
-                    <button id="up-btn">↑</button>
-                </div>
-                <div style="display: flex; justify-content: center; gap: 10px;">
-                    <button id="left-btn">←</button>
-                    <button id="right-btn">→</button>
-                </div>
-                <div style="display: flex; justify-content: center; margin-top: 5px;">
-                    <button id="down-btn">↓</button>
-                </div>
-            </div>
-            <div id="snake-message" style="display: block;">Prêt·e à jouer ?</div>
-            <div id="snake-controls">
-                <button id="snake-start" style="display: inline-block;">Commencer</button>
-                <button id="snake-restart" style="display: none;">Rejouer</button>
-            </div>
-            <div id="snake-board">
-                <!-- Contenu initial du serpent -->
-                <div class="snake-cell" style="left: 190px; top: 130px;"></div>
-                <div class="snake-cell" style="left: 180px; top: 130px;"></div>
-                <div class="snake-cell" style="left: 170px; top: 130px;"></div>
-            </div>
-            <div id="snake-score">Score: 0</div>
-        </div>
-    </div>
-
-    <!-- Section Contact -->
     <section id="contact" class="section">
         <div class="container">
-            <h2><i class="fas fa-envelope"></i> Contact</h2>
-            <div class="contact-info">
-                <p><i class="fas fa-map-marker-alt"></i> Saint-Germain-en-Laye (78100), France</p>
-                <p><i class="fas fa-phone"></i> 06 51 11 18 18</p>
-                <p><i class="fas fa-envelope"></i> hugues.de_seroux@edu.devinci.fr</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="#"><i class="fab fa-github"></i> GitHub</a>
-                </div>
-            </div>
+            <!-- Contenu du contact ici -->
         </div>
     </section>
 
@@ -190,140 +331,33 @@
         <p>© 2025 Hugues de Seroux | Portfolio CV</p>
     </footer>
 
-    <!-- Scripts -->
     <script>
-        // Script pour le jeu Snake
+        // Fonction pour gérer les onglets
         document.addEventListener('DOMContentLoaded', function() {
-            const toggleButton = document.getElementById('snake-toggle');
-            const gameContainer = document.getElementById('snake-game');
-            const board = document.getElementById('snake-board');
-            const scoreDisplay = document.getElementById('snake-score');
-            const startButton = document.getElementById('snake-start');
-            const restartButton = document.getElementById('snake-restart');
-            const messageDisplay = document.getElementById('snake-message');
-            const upButton = document.getElementById('up-btn');
-            const downButton = document.getElementById('down-btn');
-            const leftButton = document.getElementById('left-btn');
-            const rightButton = document.getElementById('right-btn');
+            const tabs = document.querySelectorAll('.tab-button');
+            const sections = document.querySelectorAll('.section');
 
-            let snake = [{x: 90, y: 90}];
-            let food = {x: 50, y: 50};
-            let direction = 'right';
-            let nextDirection = 'right';
-            let score = 0;
-            let gameInterval;
-            let gameActive = false;
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
 
-            // Fonction pour changer la direction
-            function changeDirection(newDirection) {
-                if ((newDirection === 'up' && direction !== 'down') ||
-                    (newDirection === 'down' && direction !== 'up') ||
-                    (newDirection === 'left' && direction !== 'right') ||
-                    (newDirection === 'right' && direction !== 'left')) {
-                    nextDirection = newDirection;
-                }
-            }
+                    // Masque toutes les sections
+                    sections.forEach(section => {
+                        section.style.display = 'none';
+                    });
 
-            // Boutons tactiles pour mobile
-            upButton.addEventListener('click', () => changeDirection('up'));
-            downButton.addEventListener('click', () => changeDirection('down'));
-            leftButton.addEventListener('click', () => changeDirection('left'));
-            rightButton.addEventListener('click', () => changeDirection('right'));
-
-            toggleButton.addEventListener('click', function() {
-                if (gameContainer.style.display === 'block') {
-                    gameContainer.style.display = 'none';
-                    toggleButton.textContent = 'Voir le mini-jeu';
-                    clearInterval(gameInterval);
-                    gameActive = false;
-                } else {
-                    gameContainer.style.display = 'block';
-                    toggleButton.textContent = 'Masquer le jeu';
-                    resetGameUI();
-                }
+                    // Affiche la section cible
+                    if(targetSection) {
+                        targetSection.style.display = 'block';
+                    }
+                });
             });
 
-            function resetGameUI() {
-                messageDisplay.style.display = 'block';
-                messageDisplay.textContent = 'Prêt·e à jouer ?';
-                startButton.style.display = 'inline-block';
-                restartButton.style.display = 'none';
-                scoreDisplay.textContent = 'Score: 0';
-                gameActive = false;
-            }
-
-            startButton.addEventListener('click', startGame);
-            restartButton.addEventListener('click', startGame);
-
-            function startGame() {
-                snake = [{x: 90, y: 90}];
-                direction = 'right';
-                nextDirection = 'right';
-                score = 0;
-                scoreDisplay.textContent = 'Score: ' + score;
-                messageDisplay.style.display = 'none';
-                startButton.style.display = 'none';
-                restartButton.style.display = 'none';
-                generateFood();
-                render();
-                clearInterval(gameInterval);
-                gameInterval = setInterval(move, 150);
-                gameActive = true;
-            }
-
-            function generateFood() {
-                food = {
-                    x: Math.floor(Math.random() * 19) * 10,
-                    y: Math.floor(Math.random() * 17) * 10 + 10
-                };
-            }
-
-            function render() {
-                board.innerHTML = '';
-                snake.forEach(segment => {
-                    const cell = document.createElement('div');
-                    cell.className = 'snake-cell';
-                    cell.style.left = segment.x + 'px';
-                    cell.style.top = segment.y + 'px';
-                    board.appendChild(cell);
-                });
-                const foodCell = document.createElement('div');
-                foodCell.className = 'food-cell';
-                foodCell.style.left = food.x + 'px';
-                foodCell.style.top = food.y + 'px';
-                board.appendChild(foodCell);
-            }
-
-            function move() {
-                direction = nextDirection;
-                const head = {x: snake[0].x, y: snake[0].y};
-                switch (direction) {
-                    case 'up': head.y -= 10; break;
-                    case 'down': head.y += 10; break;
-                    case 'left': head.x -= 10; break;
-                    case 'right': head.x += 10; break;
-                }
-                if (head.x < 0 || head.x >= 200 || head.y < 0 || head.y >= 180) {
-                    gameOver();
-                    return;
-                }
-                if (snake.some(segment => segment.x === head.x && segment.y === head.y)) {
-                    gameOver();
-                    return;
-                }
-                snake.unshift(head);
-                if (head.x === food.x && head.y === food.y) {
-                    score++;
-                    scoreDisplay.textContent = 'Score: ' + score;
-                    generateFood();
-                } else {
-                    snake.pop();
-                }
-                render();
-            }
-
-            function gameOver() {
-                clearInterval(gameInterval);
-                gameActive = false;
-                messageDisplay.style.display = 'block';
-                messageDisplay.textContent = 'Game Over !
+            // Afficher la première section par défaut
+            document.querySelector('.section').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
