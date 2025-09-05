@@ -22,19 +22,19 @@
     <!-- Navigation -->
     <nav class="navbar">
         <ul>
-            <li><a href="#parcours">Parcours</a></li>
+            <li><a href="#parcours">Parcours Académique</a></li>
+            <li><a href="#experiences">Expérience Professionnelle</a></li>
             <li><a href="#projets">Projets</a></li>
             <li><a href="#competences">Compétences</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Section Parcours -->
+    <!-- Section Parcours Académique -->
     <section id="parcours" class="section">
         <div class="container">
-            <h2><i class="fas fa-graduation-cap"></i> Parcours Académique & Professionnel</h2>
+            <h2><i class="fas fa-graduation-cap"></i> Parcours Académique</h2>
             <div class="timeline">
-                <!-- Formation -->
                 <div class="timeline-item">
                     <div class="timeline-date">2021 - 2025</div>
                     <div class="timeline-content">
@@ -56,26 +56,33 @@
                         <p>Lycée Berthollet, Annecy</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Expérience Professionnelle -->
+    <!-- Section Expérience Professionnelle -->
+    <section id="experiences" class="section bg-light">
+        <div class="container">
+            <h2><i class="fas fa-briefcase"></i> Expérience Professionnelle</h2>
+            <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">02/2025</div>
                     <div class="timeline-content">
-                        <h3>Stage — Ingénieur Simulation Numérique</h3>
+                        <h3><a href="experiences.html#stage-mbda">Stage — Ingénieur Simulation Numérique</a></h3>
                         <p>MBDA, Le Plessis-Robinson</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">04/2024 - 08/2024</div>
                     <div class="timeline-content">
-                        <h3>Stage — Ingénieur Hydraulicien</h3>
+                        <h3><a href="experiences.html#stage-celeros">Stage — Ingénieur Hydraulicien</a></h3>
                         <p>Celeros Clyde Union Pump, Annecy</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2021 - 2023</div>
                     <div class="timeline-content">
-                        <h3>Chef Scout d'Europe</h3>
+                        <h3><a href="experiences.html#chefs-scout">Chef Scout d'Europe</a></h3>
                         <p>AGSE, Annecy</p>
                     </div>
                 </div>
@@ -84,28 +91,32 @@
     </section>
 
     <!-- Section Projets -->
-    <section id="projets" class="section bg-light">
+    <section id="projets" class="section">
         <div class="container">
             <h2><i class="fas fa-rocket"></i> Projets Académiques</h2>
             <div class="projects-grid">
                 <!-- Projet JASPER -->
                 <div class="project-card">
-                    <img src="https://mistralaiblackforestprod.blob.core.windows.net/images/blackforest/ec8b/f57f/-cdb/4-46e9-9d54-88fdf04f63f2/image.jpg?se=2025-09-05T15%3A53%3A51Z&sp=r&sv=2025-07-05&sr=b&sig=vnvaPFXWgU2Ke8uxHTnBFOeEYOVcjXCXI/X9aHtFP38%3D" alt="Projet JASPER">
-                    <h3>Robot Humanoïde JASPER</h3>
-                    <p>Développement du robot humanoïde JASPER avec l'association DaVinciBot.</p>
+                    <a href="projets.html#jasper">
+                        <img src="https://mistralaiblackforestprod.blob.core.windows.net/images/blackforest/ec8b/f57f/-cdb/4-46e9-9d54-88fdf04f63f2/image.jpg?se=2025-09-05T15%3A53%3A51Z&sp=r&sv=2025-07-05&sr=b&sig=vnvaPFXWgU2Ke8uxHTnBFOeEYOVcjXCXI/X9aHtFP38%3D" alt="Projet JASPER">
+                        <h3>Robot Humanoïde JASPER</h3>
+                        <p>Développement du robot humanoïde JASPER avec l'association DaVinciBot.</p>
+                    </a>
                 </div>
-                <!-- Placeholder pour d'autres projets -->
+                <!-- Projet Maquette Production Automobile -->
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/300x200/0077b6/ffffff?text=Production+Automobile" alt="Projet Production Automobile">
-                    <h3>Maquette de Chaîne de Production Automobile</h3>
-                    <p>Conception et fabrication d'une maquette en partenariat avec Deloitte.</p>
+                    <a href="projets.html#production-automobile">
+                        <img src="https://via.placeholder.com/300x200/0077b6/ffffff?text=Production+Automobile" alt="Projet Production Automobile">
+                        <h3>Maquette de Chaîne de Production Automobile</h3>
+                        <p>Conception et fabrication d'une maquette en partenariat avec Deloitte.</p>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Section Compétences -->
-    <section id="competences" class="section">
+    <section id="competences" class="section bg-light">
         <div class="container">
             <h2><i class="fas fa-cogs"></i> Compétences</h2>
             <div class="skills-container">
@@ -159,7 +170,7 @@
     </div>
 
     <!-- Section Contact -->
-    <section id="contact" class="section bg-light">
+    <section id="contact" class="section">
         <div class="container">
             <h2><i class="fas fa-envelope"></i> Contact</h2>
             <div class="contact-info">
@@ -315,32 +326,4 @@
                 clearInterval(gameInterval);
                 gameActive = false;
                 messageDisplay.style.display = 'block';
-                messageDisplay.textContent = 'Game Over ! Score: ' + score;
-                restartButton.style.display = 'inline-block';
-            }
-
-            document.addEventListener('keydown', function(e) {
-                if (!gameActive) return;
-                if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
-                    e.preventDefault();
-                    switch (e.key) {
-                        case 'ArrowUp': changeDirection('up'); break;
-                        case 'ArrowDown': changeDirection('down'); break;
-                        case 'ArrowLeft': changeDirection('left'); break;
-                        case 'ArrowRight': changeDirection('right'); break;
-                    }
-                }
-            });
-        });
-
-        // Animation pour la fusée en arrière-plan
-        document.addEventListener('DOMContentLoaded', function() {
-            const rocket = document.createElement('div');
-            rocket.className = 'rocket';
-            rocket.style.position = 'fixed';
-            rocket.style.bottom = '0';
-            rocket.style.left = '50%';
-            rocket.style.transform = 'translateX(-50%)';
-            rocket.style.zIndex = '-1';
-            rocket.innerHTML = `
-                <img src="https://mistralaiblackforestprod.blob.core.windows.net/images/blackforest/698e/746a/-8ac/4-460a-9d19-44fa4b3191a5/image.jpg?se=2025-09-05T15%3A53%3A55Z&sp=r&sv=2025-07-05&sr=b&sig=j%2BJs11bW1Wa8OsYvvVVfrGXEt/OSF32Xo7PGLTh6dJ8%3D" alt="Rocket" style="width: 1![image](https://mistralaichatupprodswe.blob.core.windows.net/chat-images/assistant/b7/57/88/b75788b9-357d-4340-8cb5-2520d00844b1/06514b9e-06d7-4e65-9e90-f5b056ab0dcf/4b61c4f8-f782-4c4c-b885-3f98f784ba9f/f18b69a1-5dda-46ee-8495-10180b5e932d.jpg?sv=2025-01-05&st=2025-09-05T14%3A54%3A04Z&se=2025-09-05T15%3A54%3A04Z&sr=b&sp=rade&sig=Opm0tt1TYzxtXv1TI%2BvM%2BqpkuGWJqZwB7wTbUX%2FhY2I%3D)![image](https://mistralaichatupprodswe.blob.core.windows.net/chat-images/assistant/b7/57/88/b75788b9-357d-4340-8cb5-2520d00844b1/06514b9e-06d7-4e65-9e90-f5b056ab0dcf/793b5965-dde0-4d74-b739-6f97728748d9/889a3d80-de4f-4c05-b258-fe3fee57cc82.jpg?sv=2025-01-05&st=2025-09-05T14%3A54%3A05Z&se=2025-09-05T15%3A54%3A05Z&sr=b&sp=rade&sig=ZcDjghiI8W4jcJ5pPgKXsrxqc6akpLbCRpV4sYJfiGg%3D)![image](https://mistralaichatupprodswe.blob.core.windows.net/chat-images/assistant/b7/57/88/b75788b9-357d-4340-8cb5-2520d00844b1/06514b9e-06d7-4e65-9e90-f5b056ab0dcf/54d0dab0-ee6b-474a-b0fc-b4bac109881e/c1fae2f8-7d7e-4c35-89d7-11f3382b29ef.jpg?sv=2025-01-05&st=2025-09-05T14%3A54%3A05Z&se=2025-09-05T15%3A54%3A05Z&sr=b&sp=rade&sig=wsbnfWPJiz4%2FDX3NKuzRTVSDxqlWy9Ce4Qr34AKCbfk%3D)![image](https://mistralaichatupprodswe.blob.core.windows.net/chat-images/assistant/b7/57/88/b75788b9-357d-4340-8cb5-2520d00844b1/06514b9e-06d7-4e65-9e90-f5b056ab0dcf/89bed2f5-286b-4a21-b799-c8842cac53e3/b4cc9644-e33b-43c7-aa59-d2f5a6333135.jpg?sv=2025-01-05&st=2025-09-05T14%3A54%3A05Z&se=2025-09-05T15%3A54%3A05Z&sr=b&sp=rade&sig=KNKppdoYB2pzn39CFMByyJkIOZAw%2BlKNcYKAIC9LT60%3D)
+                messageDisplay.textContent = 'Game Over !
