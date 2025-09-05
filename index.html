@@ -1,362 +1,843 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Hugues de Seroux</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CV Hugues DE SEROUX - Avec Ariane 6 (Mobile)</title>
     <style>
-        /* Reset et polices */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary: #60A5FA;
+            --secondary: #3B82F6;
+            --accent: #1D4ED8;
+            --light: #F8FAFC;
+            --dark: #1E293B;
+            --text: #F8FAFC;
+            --metal: #9CA3AF;
+            --highlight: #60A5FA;
         }
-
+        @media print {
+            .no-print, #snake-game, #mobile-controls { display: none !important; }
+            body { font-size: 10pt; }
+        }
         body {
-            font-family: 'Raleway', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-
-        /* En-tête héroïque */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 300;
-        }
-
-        /* Navigation */
-        .navbar {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .navbar ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 1rem;
-        }
-
-        .navbar ul li {
-            margin: 0 1rem;
-        }
-
-        .navbar ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            transition: color 0.3s;
-        }
-
-        .navbar ul li a:hover {
-            color: #007BFF;
-        }
-
-        /* Section commune */
-        .section {
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 1200px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.3;
+            color: var(--text);
+            max-width: 210mm;
             margin: 0 auto;
-        }
-
-        /* Timeline pour parcours et expériences */
-        .timeline {
-            margin-top: 2rem;
+            padding: 15mm;
+            font-size: 10pt;
+            min-height: 297mm;
+            background: linear-gradient(to bottom, #00040f, #0a192f);
             position: relative;
+            overflow-y: auto;
         }
 
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: #007BFF;
+        /* Étoiles aléatoires en arrière-plan */
+        .stars {
+            position: fixed;
             top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -17px;
-            background-color: #f9f9f9;
-            border: 4px solid #007BFF;
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        .timeline-item:nth-child(odd) {
             left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-date {
-            font-weight: bold;
-            color: #007BFF;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-content {
-            padding: 20px 30px;
-            background-color: white;
-            position: relative;
-            border-radius: 6px;
-        }
-
-        .timeline-content h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Projets */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-card img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.8;
         }
 
-        .project-card h3 {
-            margin: 1rem 0 0.5rem;
+        /* Conteneur pour les fusées Ariane 6 */
+        .rockets-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .rocket {
+            position: absolute;
+            bottom: -250px;
+            transform: translateX(-50%);
+            animation: launch 15s linear infinite;
+        }
+        @keyframes launch {
+            0% { bottom: -250px; opacity: 0; }
+            10% { opacity: 1; }
+            90% { bottom: 100vh; opacity: 1; }
+            100% { bottom: 100vh; opacity: 0; }
+        }
+        .rocket svg {
+            filter: drop-shadow(0 0 8px rgba(255, 165, 0, 0.7));
         }
 
-        .project-card p {
-            padding: 0 1rem 1rem;
+        /* Styles pour le CV */
+        .header {
+            text-align: center;
+            margin-bottom: 10mm;
+            padding-bottom: 5mm;
+            border-bottom: 2px solid var(--primary);
+            position: relative;
         }
-
-        /* Compétences */
-        .skills-container {
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 20pt;
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .contact-info {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 15mm;
+            font-size: 9pt;
+            margin-top: 3mm;
             flex-wrap: wrap;
         }
-
-        .skill-category {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            max-width: 300px;
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            color: var(--metal);
         }
-
-        .skills-icons {
+        .profile {
+            background-color: rgba(248, 250, 252, 0.1);
+            padding: 8mm;
+            border-radius: 5px;
+            margin-bottom: 8mm;
+            border-left: 4px solid var(--secondary);
+            position: relative;
+        }
+        .profile::before {
+            content: "✈";
+            position: absolute;
+            left: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10pt;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: var(--primary);
+            font-size: 12pt;
+            margin: 8mm 0 4mm 0;
+            padding-bottom: 2mm;
+            border-bottom: 1px solid var(--secondary);
+            display: flex;
+            align-items: center;
+        }
+        h2::before {
+            content: "🛩";
+            margin-right: 5px;
+            font-size: 10pt;
+        }
+        .section {
+            margin-bottom: 6mm;
+        }
+        .entry {
+            background-color: rgba(248, 250, 252, 0.1);
+            border-left: 3px solid var(--secondary);
+            padding: 5mm;
+            margin-bottom: 6mm;
+            position: relative;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+        .entry:hover {
+            transform: translateX(-2px);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .entry::before {
+            content: "📍";
+            position: absolute;
+            left: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8pt;
+        }
+        .job-title {
+            font-weight: 600;
+            font-size: 11pt;
+            color: var(--primary);
+            margin-bottom: 2mm;
+        }
+        .location-dates {
+            display: flex;
+            justify-content: space-between;
+            font-size: 9pt;
+            color: var(--metal);
+            margin-bottom: 3mm;
+        }
+        .dates {
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        ul {
+            margin: 3mm 0 0 15px;
+            padding: 0;
+        }
+        li {
+            font-size: 9.5pt;
+            margin-bottom: 2mm;
+            color: var(--text);
+        }
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 5mm;
+            margin-top: 5mm;
+        }
+        .skill {
+            background-color: rgba(248, 250, 252, 0.2);
+            padding: 3mm 6mm;
+            border-radius: 4px;
+            font-size: 9pt;
+            color: var(--primary);
+            font-weight: 500;
+            border: 1px solid var(--metal);
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .skill:hover {
+            background: linear-gradient(135deg, rgba(248, 250, 252, 0.2), var(--highlight));
+            color: var(--dark);
+            border-color: var(--secondary);
+            transform: scale(1.03);
+        }
+        .technical-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 4mm;
+            margin-top: 4mm;
+        }
+        .technical-skill {
+            display: flex;
+            align-items: center;
+            font-size: 9pt;
+            color: var(--text);
+        }
+        .technical-skill::before {
+            content: "✈";
+            color: var(--secondary);
+            margin-right: 5px;
+            font-size: 8pt;
+        }
+        .highlight {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        .languages, .interests {
+            display: flex;
+            gap: 10mm;
+            margin-top: 3mm;
+        }
+        .language, .interest {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+        }
+        .language-level, .interest-name {
+            font-size: 9pt;
+            color: var(--metal);
         }
 
-        /* Contact */
-        .contact-info {
-            margin-top: 2rem;
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .social-links {
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            display: inline-block;
-            margin: 0 10px;
-            color: #333;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #007BFF;
-        }
-
-        /* Pied de page */
-        footer {
+        /* Styles pour le jeu Snake */
+        #snake-container {
+            margin: 10mm auto 8mm;
             text-align: center;
-            padding: 2rem;
-            background-color: #333;
-            color: white;
-        }
-
-        /* Bouton pour les onglets */
-        .tab-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
+            border: 1px solid var(--light);
+            padding: 5mm;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            background-color: rgba(248, 250, 252, 0.1);
+        }
+        #snake-toggle {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 9pt;
+            margin-bottom: 5mm;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        #snake-toggle::before {
+            content: '';
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="white"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/></svg>');
+            background-size: contain;
+            width: 16px;
+            height: 16px;
+        }
+        #snake-toggle:hover {
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+        }
+        #snake-game {
+            width: 200px;
+            height: 220px;
+            margin: 0 auto;
+            border: 1px solid var(--metal);
+            display: none;
+            position: relative;
+            background-color: var(--light);
+            border-radius: 5px;
+        }
+        #snake-board {
+            width: 100%;
+            height: 180px;
+            position: relative;
+            overflow: hidden;
+            background-color: white;
+            margin-bottom: 5px;
+            border: 1px solid var(--metal);
+        }
+        .snake-cell {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+        .food-cell {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            background-color: var(--primary);
+            border-radius: 50%;
+        }
+        #snake-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+        #snake-start, #snake-restart {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 8pt;
+            cursor: pointer;
+            display: none;
+        }
+        #snake-score {
+            font-size: 8pt;
+            color: var(--metal);
+            margin-bottom: 3mm;
+        }
+        #snake-message {
+            font-size: 8pt;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: none;
         }
 
-        .tab-button:hover {
-            background-color: #0056b3;
+        /* Contrôles mobiles pour Snake */
+        #mobile-controls {
+            display: none;
+            margin: 10px auto;
+            width: 150px;
+            padding: 5px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        #mobile-controls button {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            font-size: 24px;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: block;
+        }
+        @media (max-width: 768px) {
+            #mobile-controls {
+                display: block;
+            }
+            #snake-board {
+                width: 100%;
+                height: 250px;
+            }
+            #snake-game {
+                width: 100%;
+                height: 300px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- En-tête avec image de fond -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Hugues de Seroux</h1>
-            <p class="subtitle">Étudiant Ingénieur en Simulation Mécanique Numérique / ESILV</p>
-            <a href="#parcours" class="tab-button">Parcours Académique</a>
-            <a href="#experiences" class="tab-button">Expérience Professionnelle</a>
-            <a href="#projets" class="tab-button">Projets</a>
-            <a href="#competences" class="tab-button">Compétences</a>
-            <a href="snake-game.html" class="tab-button">Mini-Jeu</a>
-            <a href="#contact" class="tab-button">Contact</a>
+    <!-- Étoiles aléatoires en arrière-plan -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Conteneur pour les fusées Ariane 6 -->
+    <div class="rockets-container">
+        <!-- Fusée Ariane 6 - 1 -->
+        <div class="rocket" style="left: 15%; animation-delay: 0s;">
+            <svg width="60" height="150" viewBox="0 0 60 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Corps principal (étage central) -->
+                <rect x="25" y="10" width="10" height="90" fill="#E0E0E0" stroke="#B0B0B0" stroke-width="1"/>
+                <!-- Réservoir supérieur -->
+                <rect x="22" y="5" width="16" height="10" fill="#D0D0D0" stroke="#B0B0B0" stroke-width="1"/>
+                <!-- Boosteurs latéraux (s'arrêtent au milieu du corps central) -->
+                <rect x="15" y="35" width="8" height="50" fill="#C0C0C0" stroke="#A0A0A0" stroke-width="1"/>
+                <rect x="37" y="35" width="8" height="50" fill="#C0C0C0" stroke="#A0A0A0" stroke-width="1"/>
+                <!-- Cône supérieur -->
+                <path d="M20 5 L30 0 L40 5" fill="#B0B0B0" stroke="#A0A0A0" stroke-width="1"/>
+                <line x1="30" y1="0" x2="30" y1="5" stroke="#A0A0A0" stroke-width="1"/>
+                <!-- Flammes des boosters (alignées au même niveau) -->
+                <path d="M15 85 L20 100 L25 85" fill="#FF8C00" stroke="#D05000" stroke-width="1"/>
+                <path d="M37 85 L42 100 L47 85" fill="#FF8C00" stroke="#D05000" stroke-width="1"/>
+                <path d="M25 100 L30 120 L35 100" fill="#FF6B00" stroke="#D05000" stroke-width="1"/>
+                <path d="M27 105 L30 115 L33 105" fill="#FFD700" stroke="#D0A000" stroke-width="0.5"/>
+                <!-- Détails techniques -->
+                <rect x="26" y="25" width="2" height="5" fill="#A0A0A0"/>
+                <rect x="26" y="40" width="2" height="5" fill="#A0A0A0"/>
+                <rect x="26" y="55" width="2" height="5" fill="#A0A0A0"/>
+            </svg>
         </div>
-    </header>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="#parcours">Parcours Académique</a></li>
-            <li><a href="#experiences">Expérience Professionnelle</a></li>
-            <li><a href="#projets">Projets</a></li>
-            <li><a href="#competences">Compétences</a></li>
-            <li><a href="snake-game.html">Mini-Jeu</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Sections placeholders -->
-    <section id="parcours" class="section">
-        <div class="container">
-            <!-- Contenu du parcours académique ici -->
+        <!-- Fusée Ariane 6 - 2 -->
+        <div class="rocket" style="left: 50%; animation-delay: 5s;">
+            <svg width="60" height="150" viewBox="0 0 60 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="25" y="10" width="10" height="90" fill="#E0E0E0" stroke="#B0B0B0" stroke-width="1"/>
+                <rect x="22" y="5" width="16" height="10" fill="#D0D0D0" stroke="#B0B0B0" stroke-width="1"/>
+                <rect x="15" y="35" width="8" height="50" fill="#C0C0C0" stroke="#A0A0A0" stroke-width="1"/>
+                <rect x="37" y="35" width="8" height="50" fill="#C0C0C0" stroke="#A0A0A0" stroke-width="1"/>
+                <path d="M20 5 L30 0 L40 5" fill="#B0B0B0" stroke="#A0A0A0" stroke-width="1"/>
+                <line x1="30" y1="0" x2="30" y1="5" stroke="#A0A0A0" stroke-width="1"/>
+                <path d="M15 85 L20 100 L25 85" fill="#FF8C00" stroke="#D05000" stroke-width="1"/>
+                <path d="M37 85 L42 100 L47 85" fill="#FF8C00" stroke="#D05000" stroke-width="1"/>
+                <path d="M25 100 L30 120 L35 100" fill="#FF6B00" stroke="#D05000" stroke-width="1"/>
+                <path d="M27 105 L30 115 L33 105" fill="#FFD700" stroke="#D0A000" stroke-width="0.5"/>
+                <rect x="26" y="25" width="2" height="5" fill="#A0A0A0"/>
+                <rect x="26" y="40" width="2" height="5" fill="#A0A0A0"/>
+                <rect x="26" y="55" width="2" height="5" fill="#A0A0A0"/>
+            </svg>
         </div>
-    </section>
-
-    <section id="experiences" class="section bg-light">
-        <div class="container">
-            <!-- Contenu des expériences professionnelles ici -->
+        <!-- Fusée Ariane 6 - 3 -->
+        <div class="rocket" style="left: 85%; animation-delay: 10s;">
+            <svg width="60" height="150" viewBox="0 0 60 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="25" y="10" width="10" height="90" fill="#E0E0E0" stroke="#B0B0B0" stroke-width="1"/>
+                <rect x="22" y="5" width="16" height="10" fill="#D0D0D0" stroke="#B0B0B0" stroke-width="1"/>
+                <rect x="15" y="35" width="8" height="50" fill="#C0C0C0" stroke="#A0A0A0" stroke-width="1"/>
+                <rect x="37" y="35" width="8" height="50" fill="#C0C0C0" stroke="#A0A0A0" stroke-width="1"/>
+                <path d="M20 5 L30 0 L40 5" fill="#B0B0B0" stroke="#A0A0A0" stroke-width="1"/>
+                <line x1="30" y1="0" x2="30" y1="5" stroke="#A0A0A0" stroke-width="1"/>
+                <path d="M15 85 L20 100 L25 85" fill="#FF8C00" stroke="#D05000" stroke-width="1"/>
+                <path d="M37 85 L42 100 L47 85" fill="#FF8C00" stroke="#D05000" stroke-width="1"/>
+                <path d="M25 100 L30 120 L35 100" fill="#FF6B00" stroke="#D05000" stroke-width="1"/>
+                <path d="M27 105 L30 115 L33 105" fill="#FFD700" stroke="#D0A000" stroke-width="0.5"/>
+                <rect x="26" y="25" width="2" height="5" fill="#A0A0A0"/>
+                <rect x="26" y="40" width="2" height="5" fill="#A0A0A0"/>
+                <rect x="26" y="55" width="2" height="5" fill="#A0A0A0"/>
+            </svg>
         </div>
-    </section>
+    </div>
 
-    <section id="projets" class="section">
-        <div class="container">
-            <!-- Contenu des projets ici -->
+    <!-- En-tête -->
+    <div class="header">
+        <h1>Hugues DE SEROUX</h1>
+        <div class="contact-info">
+            <span>📍 Saint-Germain-en-Laye (78100)</span>
+            <span>📧 hugues.deseroux@gmail.com</span>
+            <span>📞 06 51 11 18 18</span>
         </div>
-    </section>
-
-    <section id="competences" class="section bg-light">
-        <div class="container">
-            <!-- Contenu des compétences ici -->
+        <div class="contact-info">
+            <span>🚗 Permis B</span>
+            <span>⛵ Permis Bateau</span>
+            <span>🔗 linkedin.com/in/hugues-de-seroux</span>
         </div>
-    </section>
+    </div>
 
-    <section id="contact" class="section">
-        <div class="container">
-            <!-- Contenu du contact ici -->
+    <!-- Profil -->
+    <div class="profile">
+        <p>
+            <strong>Ingénieur en Simulation Mécanique et Numérique</strong>, diplômé de l'<span class="highlight">ESILV</span>, je combine expertise en <span class="highlight">modélisation 3D</span>, <span class="highlight">analyse modale</span> et <span class="highlight">CFD</span> pour concevoir des solutions innovantes dans les secteurs de l'<span class="highlight">aéronautique</span> et de la <span class="highlight">défense</span>.
+        </p>
+    </div>
+
+    <!-- Mini-jeu Snake -->
+    <div id="snake-container" class="no-print">
+        <button id="snake-toggle">Masquer le jeu</button>
+        <div id="snake-game" style="display: block;">
+            <div id="mobile-controls">
+                <div style="display: flex; justify-content: center; margin-bottom: 5px;">
+                    <button id="up-btn">↑</button>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 10px;">
+                    <button id="left-btn">←</button>
+                    <button id="right-btn">→</button>
+                </div>
+                <div style="display: flex; justify-content: center; margin-top: 5px;">
+                    <button id="down-btn">↓</button>
+                </div>
+            </div>
+            <div id="snake-message" style="display: block;">Prêt·e à jouer ?</div>
+            <div id="snake-controls">
+                <button id="snake-start" style="display: inline-block;">Commencer</button>
+                <button id="snake-restart" style="display: none;">Rejouer</button>
+            </div>
+            <div id="snake-board">
+                <!-- Contenu initial du serpent -->
+                <div class="snake-cell" style="left: 190px; top: 130px;"></div>
+                <div class="snake-cell" style="left: 180px; top: 130px;"></div>
+                <div class="snake-cell" style="left: 170px; top: 130px;"></div>
+            </div>
+            <div id="snake-score">Score: 0</div>
         </div>
-    </section>
+    </div>
 
-    <!-- Pied de page -->
-    <footer>
-        <p>© 2025 Hugues de Seroux | Portfolio CV</p>
-    </footer>
+    <!-- Expérience Professionnelle -->
+    <div class="section">
+        <h2>Expérience Professionnelle</h2>
+        <div class="entry">
+            <div class="job-title">Stage — Ingénieur Simulation Numérique</div>
+            <div class="location-dates">
+                <span class="location">MBDA, Le Plessis-Robinson</span>
+                <span class="dates">févr. 2025 — juil. 2025</span>
+            </div>
+            <ul>
+                <li>Optimisation numérique et stratégie de recalage par analyse modale de circuits électroniques.</li>
+                <li>Utilisation de l'environnement <span class="highlight">ANSYS (Mechanical et optiSLang)</span>.</li>
+            </ul>
+        </div>
+        <div class="entry">
+            <div class="job-title">Stage — Ingénieur Hydraulicien</div>
+            <div class="location-dates">
+                <span class="location">Celeros Clyde Union Pump, Annecy</span>
+                <span class="dates">avr. 2024 — août 2024</span>
+            </div>
+            <ul>
+                <li>Suivi et traitement de données d'<span class="highlight">essais thermiques</span> pour des pompes hydrauliques destinées aux centrales nucléaires.</li>
+                <li>Conception d'une hélice de gavage à l'aide de la <span class="highlight">CFD (ANSYS Fluent)</span>.</li>
+            </ul>
+        </div>
+        <div class="entry">
+            <div class="job-title">Chef Scout</div>
+            <div class="location-dates">
+                <span class="location">AGSE, Annecy</span>
+                <span class="dates">2021 — 2023</span>
+            </div>
+            <ul>
+                <li>Animation et encadrement d'une trentaine de jeunes âgés entre 12 et 16 ans lors de sorties en <span class="highlight">montagne</span>.</li>
+                <li>Préparation des itinéraires et lieux de camps, <span class="highlight">logistique, autorisations</span>.</li>
+            </ul>
+        </div>
+    </div>
 
+    <!-- Projets Académiques -->
+    <div class="section">
+        <h2>Projets Académiques</h2>
+        <div class="entry">
+            <div class="job-title">Projet d'Innovation Industrielle (PI<sup>2</sup>)</div>
+            <div class="location-dates">
+                <span class="location">Deloitte, Paris-La Défense</span>
+                <span class="dates">2024 — 2025</span>
+            </div>
+            <ul>
+                <li>Conception et fabrication d'une <span class="highlight">maquette de chaîne de production automobile</span> en partenariat avec Deloitte.</li>
+                <li>Utilisation de <span class="highlight">SOLIDWORKS</span> pour la modélisation 3D.</li>
+            </ul>
+        </div>
+        <div class="entry">
+            <div class="job-title">Projet Robotique — Robot Humanoïde JASPER</div>
+            <div class="location-dates">
+                <span class="location">DaVinciBot, ESILV</span>
+                <span class="dates">2023 — 2024</span>
+            </div>
+            <ul>
+                <li>Développement du robot humanoïde <span class="highlight">JASPER</span> avec l'association DaVinciBot.</li>
+                <li>Modélisation 3D, et intégration de capteurs.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Compétences -->
+    <div class="section">
+        <h2>Compétences Techniques</h2>
+        <div class="technical-skills">
+            <div class="technical-skill">Simulation mécanique</div>
+            <div class="technical-skill">Éléments finis</div>
+            <div class="technical-skill">Conception 3D (SOLIDWORKS)</div>
+            <div class="technical-skill">Analyse modale et vibratoire</div>
+            <div class="technical-skill">Modélisation thermique et CFD</div>
+            <div class="technical-skill">ABAQUS</div>
+            <div class="technical-skill">ANSYS (CFX, Fluent, OptiSLang, Sherlock)</div>
+            <div class="technical-skill">Python</div>
+            <div class="technical-skill">MATLAB</div>
+            <div class="technical-skill">Suite Office</div>
+            <div class="technical-skill">Teams</div>
+            <div class="technical-skill">Outlook</div>
+        </div>
+        <h3 style="color: var(--primary); margin-top: 8mm; border: none;">Soft Skills</h3>
+        <div class="skills-container">
+            <div class="skill">Gestion de projet</div>
+            <div class="skill">Rigueur</div>
+            <div class="skill">Esprit d'analyse</div>
+            <div class="skill">Autonomie</div>
+            <div class="skill">Adaptabilité</div>
+        </div>
+    </div>
+
+    <!-- Formation -->
+    <div class="section">
+        <h2>Formation</h2>
+        <div class="entry">
+            <div class="job-title">Diplôme d'Ingénieur — Majeure Modélisation et Mécanique Numérique</div>
+            <div class="location-dates">
+                <span class="location">ESILV, Paris-La Défense</span>
+                <span class="dates">2021 — 2025</span>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="job-title">Échange International</div>
+            <div class="location-dates">
+                <span class="location">Riga Technical University (RTU), Lettonie</span>
+                <span class="dates">2022 — 2023</span>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="job-title">Certification Design Thinking</div>
+            <div class="location-dates">
+                <span class="location">D+HINKING</span>
+                <span class="dates">2022</span>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="job-title">Classe Préparatoire PSI*</div>
+            <div class="location-dates">
+                <span class="location">Lycée Berthollet, Annecy</span>
+                <span class="dates">2019 — 2021</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Langues et Centres d'Intérêt -->
+    <div class="section">
+        <h2>Langues et Centres d'Intérêt</h2>
+        <div class="languages">
+            <div class="language">
+                <div><strong>Français</strong></div>
+                <div class="language-level">Langue maternelle</div>
+            </div>
+            <div class="language">
+                <div><strong>Anglais</strong></div>
+                <div class="language-level">Niveau B2 (TOEFL : 583/677)</div>
+            </div>
+        </div>
+        <div class="skills-container" style="margin-top: 5mm;">
+            <div class="skill">Aéronautique</div>
+            <div class="skill">Sports nautiques</div>
+            <div class="skill">Impression 3D</div>
+            <div class="skill">Littérature</div>
+            <div class="skill">Dessin numérique</div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script>
-        // Fonction pour gérer les onglets
+        // Génération d'étoiles aléatoires
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 200; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2 + 0.5;
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            const opacity = Math.random() * 0.7 + 0.3;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.left = `${x}%`;
+            star.style.top = `${y}%`;
+            star.style.opacity = opacity;
+            starsContainer.appendChild(star);
+        }
+
+        // Script pour le jeu Snake
         document.addEventListener('DOMContentLoaded', function() {
-            const tabs = document.querySelectorAll('.tab-button');
-            const sections = document.querySelectorAll('.section');
+            const toggleButton = document.getElementById('snake-toggle');
+            const gameContainer = document.getElementById('snake-game');
+            const board = document.getElementById('snake-board');
+            const scoreDisplay = document.getElementById('snake-score');
+            const startButton = document.getElementById('snake-start');
+            const restartButton = document.getElementById('snake-restart');
+            const messageDisplay = document.getElementById('snake-message');
+            const upButton = document.getElementById('up-btn');
+            const downButton = document.getElementById('down-btn');
+            const leftButton = document.getElementById('left-btn');
+            const rightButton = document.getElementById('right-btn');
 
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
+            let snake = [{x: 90, y: 90}];
+            let food = {x: 50, y: 50};
+            let direction = 'right';
+            let nextDirection = 'right';
+            let score = 0;
+            let gameInterval;
+            let gameActive = false;
 
-                    // Masque toutes les sections
-                    sections.forEach(section => {
-                        section.style.display = 'none';
-                    });
+            // Fonction pour changer la direction
+            function changeDirection(newDirection) {
+                if ((newDirection === 'up' && direction !== 'down') ||
+                    (newDirection === 'down' && direction !== 'up') ||
+                    (newDirection === 'left' && direction !== 'right') ||
+                    (newDirection === 'right' && direction !== 'left')) {
+                    nextDirection = newDirection;
+                }
+            }
 
-                    // Affiche la section cible
-                    if(targetSection) {
-                        targetSection.style.display = 'block';
-                    }
-                });
+            // Boutons tactiles pour mobile
+            upButton.addEventListener('click', () => changeDirection('up'));
+            downButton.addEventListener('click', () => changeDirection('down'));
+            leftButton.addEventListener('click', () => changeDirection('left'));
+            rightButton.addEventListener('click', () => changeDirection('right'));
+
+            toggleButton.addEventListener('click', function() {
+                if (gameContainer.style.display === 'block') {
+                    gameContainer.style.display = 'none';
+                    toggleButton.textContent = 'Voir le mini-jeu';
+                    clearInterval(gameInterval);
+                    gameActive = false;
+                } else {
+                    gameContainer.style.display = 'block';
+                    toggleButton.textContent = 'Masquer le jeu';
+                    resetGameUI();
+                }
             });
 
-            // Afficher la première section par défaut
-            document.querySelector('.section').style.display = 'block';
+            function resetGameUI() {
+                messageDisplay.style.display = 'block';
+                messageDisplay.textContent = 'Prêt·e à jouer ?';
+                startButton.style.display = 'inline-block';
+                restartButton.style.display = 'none';
+                scoreDisplay.textContent = 'Score: 0';
+                gameActive = false;
+            }
+
+            startButton.addEventListener('click', startGame);
+            restartButton.addEventListener('click', startGame);
+
+            function startGame() {
+                snake = [{x: 90, y: 90}];
+                direction = 'right';
+                nextDirection = 'right';
+                score = 0;
+                scoreDisplay.textContent = 'Score: ' + score;
+                messageDisplay.style.display = 'none';
+                startButton.style.display = 'none';
+                restartButton.style.display = 'none';
+                generateFood();
+                render();
+                clearInterval(gameInterval);
+                gameInterval = setInterval(move, 150);
+                gameActive = true;
+            }
+
+            function generateFood() {
+                food = {
+                    x: Math.floor(Math.random() * 19) * 10,
+                    y: Math.floor(Math.random() * 17) * 10 + 10
+                };
+            }
+
+            function render() {
+                board.innerHTML = '';
+                snake.forEach(segment => {
+                    const cell = document.createElement('div');
+                    cell.className = 'snake-cell';
+                    cell.style.left = segment.x + 'px';
+                    cell.style.top = segment.y + 'px';
+                    board.appendChild(cell);
+                });
+                const foodCell = document.createElement('div');
+                foodCell.className = 'food-cell';
+                foodCell.style.left = food.x + 'px';
+                foodCell.style.top = food.y + 'px';
+                board.appendChild(foodCell);
+            }
+
+            function move() {
+                direction = nextDirection;
+                const head = {x: snake[0].x, y: snake[0].y};
+                switch (direction) {
+                    case 'up': head.y -= 10; break;
+                    case 'down': head.y += 10; break;
+                    case 'left': head.x -= 10; break;
+                    case 'right': head.x += 10; break;
+                }
+                if (head.x < 0 || head.x >= 200 || head.y < 0 || head.y >= 180) {
+                    gameOver();
+                    return;
+                }
+                if (snake.some(segment => segment.x === head.x && segment.y === head.y)) {
+                    gameOver();
+                    return;
+                }
+                snake.unshift(head);
+                if (head.x === food.x && head.y === food.y) {
+                    score++;
+                    scoreDisplay.textContent = 'Score: ' + score;
+                    generateFood();
+                } else {
+                    snake.pop();
+                }
+                render();
+            }
+
+            function gameOver() {
+                clearInterval(gameInterval);
+                gameActive = false;
+                messageDisplay.style.display = 'block';
+                messageDisplay.textContent = 'Game Over ! Score: ' + score;
+                restartButton.style.display = 'inline-block';
+            }
+
+            document.addEventListener('keydown', function(e) {
+                if (!gameActive) return;
+                if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+                    e.preventDefault();
+                    switch (e.key) {
+                        case 'ArrowUp': changeDirection('up'); break;
+                        case 'ArrowDown': changeDirection('down'); break;
+                        case 'ArrowLeft': changeDirection('left'); break;
+                        case 'ArrowRight': changeDirection('right'); break;
+                    }
+                }
+            });
         });
     </script>
 </body>
