@@ -185,17 +185,17 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const animateElements = document.querySelectorAll('.scroll-animate');
+
     function checkPosition() {
         const windowHeight = window.innerHeight;
         animateElements.forEach(el => {
             const posFromTop = el.getBoundingClientRect().top;
-            if(posFromTop < windowHeight && posFromTop > 0){
+            if(posFromTop < windowHeight - 50){
                 el.classList.add('show');
-            } else {
-                el.classList.remove('show');
             }
         });
     }
+
     window.addEventListener('scroll', checkPosition);
     window.addEventListener('resize', checkPosition);
     checkPosition();
