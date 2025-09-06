@@ -220,11 +220,17 @@ body {
     font-size: 1.2rem;
     margin: 0.5rem 0;
     color: #1976D2;
-    text-decoration: none; /* supprime underline */
+    text-decoration: none;
 }
 
-.project-card:hover h3 {
-    color: #FF9800; /* hover orange */
+.project-card h3 a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+.project-card h3 a:hover {
+    color: #FF9800;
 }
 
 .project-card p {
@@ -285,7 +291,7 @@ body {
     font-size: 0.95rem;
     color: #1976D2;
     text-align: center;
-    transition: background 0.3s;
+    transition: background 0.3s, color 0.3s;
     cursor: default;
 }
 
