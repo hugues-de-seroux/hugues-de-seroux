@@ -183,23 +183,51 @@
 
 <!-- Script pour animations scroll réactivables -->
 <script>
+<script>
 document.addEventListener('DOMContentLoaded', function() {
     const animateElements = document.querySelectorAll('.scroll-animate');
+    const skillCards = document.querySelectorAll('.skill-card');
+    const projectLinks = document.querySelectorAll('.project-card h3 a');
+
+    // Fonction qui déclenche l'animation lorsque l'élément entre dans la fenêtre
     function checkPosition() {
         const windowHeight = window.innerHeight;
         animateElements.forEach(el => {
             const posFromTop = el.getBoundingClientRect().top;
             if(posFromTop < windowHeight && posFromTop > 0){
                 el.classList.add('show');
-            } else {
-                el.classList.remove('show');
             }
         });
     }
+
     window.addEventListener('scroll', checkPosition);
     window.addEventListener('resize', checkPosition);
-    checkPosition();
+    checkPosition(); // vérifie au chargement
+
+    // Hover fluide pour compétences
+    skillCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'scale(1.05)';
+            card.style.transition = 'all 0.3s ease';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'scale(1)';
+        });
+    });
+
+    // Hover orange pour titres cliquables des projets et expériences
+    projectLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            link.style.color = '#FF9800';
+            link.style.transition = 'color 0.3s ease';
+        });
+        link.addEventListener('mouseleave', () => {
+            link.style.color = ''; // reprend la couleur CSS par défaut
+        });
+    });
 });
+</script>
+
 </script>
 
 </body>
