@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-
-    <!-- Hero -->
+    <!-- En-tête -->
     <header class="hero">
         <div class="hero-content">
             <h1>Hugues de Seroux</h1>
@@ -20,17 +19,24 @@
 
     <!-- Navigation -->
     <nav class="navbar">
-        <ul>
-            <li><a href="#profil">Profil</a></li>
-            <li><a href="#parcours">Parcours</a></li>
-            <li><a href="#experiences">Expérience</a></li>
-            <li><a href="#projets">Projets</a></li>
-            <li><a href="#competences">Compétences</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#parcours">Parcours Académique</a></li>
+                <li><a href="#experiences">Expérience Professionnelle</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </nav>
 
-    <!-- Profil -->
+    <!-- Section Profil -->
     <section id="profil" class="section">
         <div class="container">
             <h2><i class="fas fa-user"></i> Profil</h2>
@@ -45,7 +51,7 @@
         </div>
     </section>
 
-    <!-- Parcours Académique -->
+    <!-- Section Parcours Académique -->
     <section id="parcours" class="section bg-light">
         <div class="container">
             <h2><i class="fas fa-graduation-cap"></i> Parcours Académique</h2>
@@ -53,85 +59,72 @@
                 <div class="timeline-item left scroll-animate">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <img src="https://via.placeholder.com/80x80/0077b6/ffffff?text=ESILV" alt="ESILV">
+                        <img src="https://via.placeholder.com/80x80/0077b6/ffffff?text=ESILV" alt="Logo ESILV">
                         <div class="timeline-date">2021 - 2025</div>
-                        <h3>Diplôme d'Ingénieur — Mécanique Numérique</h3>
+                        <h3>Diplôme d'Ingénieur — Majeure Modélisation et Mécanique Numérique</h3>
                         <p>ESILV, Paris-La Défense</p>
                     </div>
                 </div>
                 <div class="timeline-item right scroll-animate">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <img src="https://via.placeholder.com/80x80/0077b6/ffffff?text=RTU" alt="RTU">
+                        <img src="https://via.placeholder.com/80x80/0077b6/ffffff?text=RTU" alt="Logo RTU">
                         <div class="timeline-date">2022 - 2023</div>
                         <h3>Échange International</h3>
                         <p>Riga Technical University (RTU), Lettonie</p>
                     </div>
                 </div>
-                <div class="timeline-item left scroll-animate">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <img src="https://via.placeholder.com/80x80/0077b6/ffffff?text=Berthollet" alt="Berthollet">
-                        <div class="timeline-date">2019 - 2021</div>
-                        <h3>Classe Préparatoire PSI*</h3>
-                        <p>Lycée Berthollet, Annecy</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Expérience Professionnelle -->
+    <!-- Section Expérience Professionnelle -->
     <section id="experiences" class="section">
         <div class="container">
             <h2><i class="fas fa-briefcase"></i> Expérience Professionnelle</h2>
             <div class="projects-grid">
                 <div class="project-card scroll-animate">
-                    <img src="https://via.placeholder.com/80x80/0077b6/ffffff?text=MBDA" alt="MBDA">
-                    <h3><a href="stages/mbda.html" target="_blank">Stage — Ingénieur Simulation Numérique</a></h3>
-                    <p>MBDA, Le Plessis-Robinson (févr. 2025 — juil. 2025)</p>
+                    <img src="https://via.placeholder.com/80x80/0077b6/ffffff?text=MBDA" alt="Logo MBDA">
+                    <h3><a href="stages/mbda.html">Stage — Ingénieur Simulation Numérique</a></h3>
+                    <p>MBDA, Le Plessis-Robinson</p>
+                    <div class="timeline-date">févr. 2025 — juil. 2025</div>
                 </div>
                 <div class="project-card scroll-animate">
-                    <img src="https://via.placeholder.com/80x80/0077b6/ffffff?text=Celeros" alt="Celeros">
-                    <h3><a href="stages/celeros.html" target="_blank">Stage — Ingénieur Hydraulicien</a></h3>
-                    <p>Celeros Clyde Union Pump, Annecy (avr. 2024 — août 2024)</p>
-                </div>
-                <div class="project-card scroll-animate">
-                    <img src="https://via.placeholder.com/80x80/0077b6/ffffff?text=AGSE" alt="AGSE">
-                    <h3>Chef Scout d'Europe</h3>
-                    <p>AGSE, Annecy (2021 — 2023)</p>
+                    <img src="https://via.placeholder.com/80x80/0077b6/ffffff?text=Celeros" alt="Logo Celeros">
+                    <h3><a href="stages/celeros.html">Stage — Ingénieur Hydraulicien</a></h3>
+                    <p>Celeros Clyde Union Pump, Annecy</p>
+                    <div class="timeline-date">avr. 2024 — août 2024</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projets Académiques -->
+    <!-- Section Projets -->
     <section id="projets" class="section bg-light">
         <div class="container">
             <h2><i class="fas fa-rocket"></i> Projets Académiques</h2>
             <div class="projects-grid">
                 <div class="project-card scroll-animate">
-                    <img src="https://mistralaiblackforestprod.blob.core.windows.net/images/blackforest/ec8b/f57f/-cdb/4-46e9-9d54-88fdf04f63f2/image.jpg" alt="JASPER">
-                    <h3><a href="projets/jasper.html" target="_blank">Robot Humanoïde JASPER</a></h3>
+                    <img src="https://via.placeholder.com/80x80/0077b6/ffffff?text=JASPER" alt="Projet JASPER">
+                    <h3><a href="projets/jasper.html">Robot Humanoïde JASPER</a></h3>
                     <p>Développement du robot humanoïde JASPER avec l'association DaVinciBot.</p>
                 </div>
                 <div class="project-card scroll-animate">
-                    <img src="https://via.placeholder.com/80x80/0077b6/ffffff?text=Auto" alt="Production Automobile">
-                    <h3><a href="projets/production-automobile.html" target="_blank">Maquette Production Automobile</a></h3>
+                    <img src="https://via.placeholder.com/80x80/0077b6/ffffff?text=Auto" alt="Projet Production Automobile">
+                    <h3><a href="projets/production-automobile.html">Maquette de Chaîne de Production Automobile</a></h3>
                     <p>Conception et fabrication d'une maquette en partenariat avec Deloitte.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Compétences -->
+    <!-- Section Compétences -->
     <section id="competences" class="section">
         <div class="container">
             <h2><i class="fas fa-cogs"></i> Compétences</h2>
             <div class="skills-container">
-                <!-- Hard Skills -->
                 <div class="skill-category scroll-animate">
-                    <img src="https://via.placeholder.com/80x80/0077b6/ffffff?text=Tech" alt="Hard Skills">
+                    <img src="https://via.placeholder.com/80x80/1976D2/ffffff?text=Hard" alt="Hard Skills">
                     <h3>Hard Skills</h3>
                     <div class="skills-grid">
                         <div class="skill-card">Simulation mécanique</div>
@@ -143,10 +136,9 @@
                         <div class="skill-card">ANSYS</div>
                         <div class="skill-card">Python</div>
                         <div class="skill-card">MATLAB</div>
-                        <div class="skill-card">Suite Office</div>
                     </div>
                 </div>
-                <!-- Soft Skills -->
+
                 <div class="skill-category scroll-animate">
                     <img src="https://via.placeholder.com/80x80/FF9800/ffffff?text=Soft" alt="Soft Skills">
                     <h3>Soft Skills</h3>
@@ -162,11 +154,11 @@
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Section Contact -->
     <section id="contact" class="section bg-light">
         <div class="container">
             <h2><i class="fas fa-envelope"></i> Contact</h2>
-            <div class="contact-info">
+            <div class="contact-info scroll-animate">
                 <p><i class="fas fa-map-marker-alt"></i> Saint-Germain-en-Laye (78100), France</p>
                 <p><i class="fas fa-phone"></i> 06 51 11 18 18</p>
                 <p><i class="fas fa-envelope"></i> hugues.de_seroux@edu.devinci.fr</p>
@@ -183,24 +175,31 @@
         <p>© 2025 Hugues de Seroux | Portfolio CV</p>
     </footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const elements = document.querySelectorAll('.scroll-animate');
-    function checkPosition() {
+    <!-- JS pour animations scroll et menu hamburger -->
+    <script>
+    // Menu hamburger
+    const toggleButton = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggleButton.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Animations scroll
+    function checkScroll() {
+        const elements = document.querySelectorAll('.scroll-animate');
+        const triggerBottom = window.innerHeight * 0.85;
+
         elements.forEach(el => {
-            const posFromTop = el.getBoundingClientRect().top;
-            if(posFromTop < window.innerHeight && posFromTop > 0){
-                el.classList.add('show');
-            } else {
-                el.classList.remove('show');
-            }
+            const top = el.getBoundingClientRect().top;
+            if(top < triggerBottom) el.classList.add('show');
+            else el.classList.remove('show');
         });
     }
-    window.addEventListener('scroll', checkPosition);
-    window.addEventListener('resize', checkPosition);
-    checkPosition();
-});
-</script>
 
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('resize', checkScroll);
+    window.addEventListener('load', checkScroll);
+    </script>
 </body>
 </html>
