@@ -145,7 +145,6 @@
                     <div class="skill-card">MATLAB</div>
                 </div>
             </div>
-
             <!-- Soft Skills -->
             <div class="skill-category scroll-animate">
                 <img src="https://via.placeholder.com/80x80/FF9800/ffffff?text=Soft" alt="Soft Skills">
@@ -182,6 +181,7 @@
     <p>© 2025 Hugues de Seroux | Portfolio CV</p>
 </footer>
 
+<!-- Script pour animations scroll réactivables -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const animateElements = document.querySelectorAll('.scroll-animate');
@@ -189,12 +189,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const windowHeight = window.innerHeight;
         animateElements.forEach(el => {
             const posFromTop = el.getBoundingClientRect().top;
-            if(posFromTop - windowHeight <= -100) {
+            if(posFromTop < windowHeight && posFromTop > 0){
                 el.classList.add('show');
+            } else {
+                el.classList.remove('show');
             }
         });
     }
     window.addEventListener('scroll', checkPosition);
+    window.addEventListener('resize', checkPosition);
     checkPosition();
 });
 </script>
