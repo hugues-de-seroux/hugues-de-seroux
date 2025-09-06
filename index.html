@@ -22,8 +22,8 @@
 <nav class="navbar">
     <ul>
         <li><a href="#profil">Profil</a></li>
-        <li><a href="#parcours">Parcours</a></li>
-        <li><a href="#experiences">Expérience</a></li>
+        <li><a href="#parcours">Parcours Académique</a></li>
+        <li><a href="#experiences">Expérience Professionnelle</a></li>
         <li><a href="#projets">Projets</a></li>
         <li><a href="#competences">Compétences</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -43,41 +43,74 @@
     </div>
 </section>
 
-<!-- Parcours et Expériences combinés -->
+<!-- Parcours Académique -->
 <section id="parcours" class="section bg-light">
     <div class="container">
-        <h2><i class="fas fa-graduation-cap"></i> Parcours & Expériences</h2>
-        <div class="projects-grid">
-            <!-- Parcours 1 -->
-            <div class="project-card scroll-animate">
-                <img src="https://via.placeholder.com/80x80/FF6F3C/FFFFFF?text=ESILV" alt="ESILV">
-                <h3>Diplôme d'Ingénieur — Mécanique Numérique</h3>
-                <p>ESILV, Paris-La Défense (2021-2025)</p>
+        <h2><i class="fas fa-graduation-cap"></i> Parcours Académique</h2>
+        <div class="timeline">
+            <div class="timeline-item left scroll-animate">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <img src="https://via.placeholder.com/80x80/FF6F3C/FFFFFF?text=ESILV" alt="ESILV">
+                    <h3>Diplôme d'Ingénieur — Mécanique Numérique</h3>
+                    <p>ESILV, Paris-La Défense (2021-2025)</p>
+                </div>
             </div>
-            <!-- Parcours 2 -->
-            <div class="project-card scroll-animate">
-                <img src="https://via.placeholder.com/80x80/FF6F3C/FFFFFF?text=RTU" alt="RTU">
-                <h3>Échange International</h3>
-                <p>Riga Technical University, Lettonie (2022-2023)</p>
+            <div class="timeline-item right scroll-animate">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <img src="https://via.placeholder.com/80x80/FF6F3C/FFFFFF?text=RTU" alt="RTU">
+                    <h3>Échange International</h3>
+                    <p>Riga Technical University, Lettonie (2022-2023)</p>
+                </div>
             </div>
-            <!-- Expérience 1 -->
-            <div class="project-card scroll-animate">
-                <img src="https://via.placeholder.com/80x80/FF6F3C/FFFFFF?text=MBDA" alt="MBDA">
-                <h3><a href="stages/mbda.html" target="_blank">Stage Ingénieur Simulation</a></h3>
-                <p>MBDA, Le Plessis-Robinson (févr. 2025 — juil. 2025)</p>
+            <div class="timeline-item left scroll-animate">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <img src="https://via.placeholder.com/80x80/FF6F3C/FFFFFF?text=Berthollet" alt="Berthollet">
+                    <h3>Classe Préparatoire PSI*</h3>
+                    <p>Lycée Berthollet, Annecy (2019-2021)</p>
+                </div>
             </div>
-            <!-- Expérience 2 -->
-            <div class="project-card scroll-animate">
-                <img src="https://via.placeholder.com/80x80/FF6F3C/FFFFFF?text=Celeros" alt="Celeros">
-                <h3><a href="stages/celeros.html" target="_blank">Stage Hydraulicien</a></h3>
-                <p>Celeros Clyde Union Pump, Annecy (avr. 2024 — août 2024)</p>
+        </div>
+    </div>
+</section>
+
+<!-- Expérience Professionnelle -->
+<section id="experiences" class="section">
+    <div class="container">
+        <h2><i class="fas fa-briefcase"></i> Expérience Professionnelle</h2>
+        <div class="timeline">
+            <div class="timeline-item left scroll-animate">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <img src="https://via.placeholder.com/80x80/FF6F3C/FFFFFF?text=MBDA" alt="MBDA">
+                    <h3><a href="stages/mbda.html" target="_blank">Stage — Ingénieur Simulation</a></h3>
+                    <p>MBDA, Le Plessis-Robinson (févr. 2025 — juil. 2025)</p>
+                </div>
+            </div>
+            <div class="timeline-item right scroll-animate">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <img src="https://via.placeholder.com/80x80/FF6F3C/FFFFFF?text=Celeros" alt="Celeros">
+                    <h3><a href="stages/celeros.html" target="_blank">Stage — Ingénieur Hydraulicien</a></h3>
+                    <p>Celeros Clyde Union Pump, Annecy (avr. 2024 — août 2024)</p>
+                </div>
+            </div>
+            <div class="timeline-item left scroll-animate">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <img src="https://via.placeholder.com/80x80/FF6F3C/FFFFFF?text=AGSE" alt="AGSE">
+                    <h3>Chef Scout d'Europe</h3>
+                    <p>AGSE, Annecy (2021-2023)</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Projets -->
-<section id="projets" class="section">
+<section id="projets" class="section bg-light">
     <div class="container">
         <h2><i class="fas fa-rocket"></i> Projets Académiques</h2>
         <div class="projects-grid">
@@ -96,11 +129,10 @@
 </section>
 
 <!-- Compétences -->
-<section id="competences" class="section bg-light">
+<section id="competences" class="section">
     <div class="container">
         <h2><i class="fas fa-cogs"></i> Compétences</h2>
         <div class="skills-container">
-            <!-- Hard Skills -->
             <div class="skill-category scroll-animate">
                 <img src="https://via.placeholder.com/80x80/FF6F3C/FFFFFF?text=Hard" alt="Hard Skills">
                 <h3>Hard Skills</h3>
@@ -116,7 +148,6 @@
                     <div class="skill-card">MATLAB</div>
                 </div>
             </div>
-            <!-- Soft Skills -->
             <div class="skill-category scroll-animate">
                 <img src="https://via.placeholder.com/80x80/FF6F3C/FFFFFF?text=Soft" alt="Soft Skills">
                 <h3>Soft Skills</h3>
@@ -133,7 +164,7 @@
 </section>
 
 <!-- Contact -->
-<section id="contact" class="section">
+<section id="contact" class="section bg-light">
     <div class="container scroll-animate">
         <h2><i class="fas fa-envelope"></i> Contact</h2>
         <div class="contact-info">
@@ -153,35 +184,29 @@
     <p>© 2025 Hugues de Seroux | Portfolio CV</p>
 </footer>
 
-<!-- Script animations -->
+<!-- Script JS -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const elements = document.querySelectorAll('.scroll-animate');
-
     function animateOnScroll() {
         const windowHeight = window.innerHeight;
         elements.forEach(el => {
             const top = el.getBoundingClientRect().top;
-            if (top < windowHeight && top > 0) {
-                el.classList.add('show');
-            } else {
-                el.classList.remove('show');
-            }
+            if(top < windowHeight && top > 0) el.classList.add('show');
+            else el.classList.remove('show');
         });
     }
-
     window.addEventListener('scroll', animateOnScroll);
     window.addEventListener('resize', animateOnScroll);
     animateOnScroll();
 
-    // Hover dynamique cartes
+    // Hover dynamique cartes et titres
     const cards = document.querySelectorAll('.project-card, .skill-card');
     cards.forEach(card => {
         card.addEventListener('mouseenter', () => { card.style.transform = 'scale(1.05)'; });
         card.addEventListener('mouseleave', () => { card.style.transform = 'scale(1)'; });
     });
 
-    // Hover titres cliquables
     const links = document.querySelectorAll('.project-card h3 a, .timeline-content h3 a');
     links.forEach(link => {
         link.addEventListener('mouseenter', () => link.style.color = '#FF6F3C');
