@@ -163,7 +163,6 @@ body {
     position: absolute;
     width: 25px;
     height: 25px;
-    right: -17px;
     background-color: #f9f9f9;
     border: 4px solid #007BFF;
     top: 15px;
@@ -171,12 +170,12 @@ body {
     z-index: 1;
 }
 
-.timeline-item:nth-child(odd) {
-    left: 0;
+.timeline-item:nth-child(odd)::after {
+    right: -17px; /* à gauche : rond à droite du bloc */
 }
 
-.timeline-item:nth-child(even) {
-    left: 50%;
+.timeline-item:nth-child(even)::after {
+    left: -17px; /* à droite : rond à gauche du bloc */
 }
 
 .timeline-date {
