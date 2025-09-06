@@ -70,7 +70,7 @@ body {
 }
 
 .navbar ul li a:hover {
-    color: #1976D2;
+    color: #FF9800; /* hover orange */
 }
 
 /* Sections */
@@ -130,6 +130,14 @@ body {
     width: 50%;
     padding: 1rem 2rem;
     box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.timeline-item.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .timeline-item.left {
@@ -187,6 +195,13 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     padding: 1rem;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.project-card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-card:hover {
@@ -205,6 +220,11 @@ body {
     font-size: 1.2rem;
     margin: 0.5rem 0;
     color: #1976D2;
+    text-decoration: none; /* supprime underline */
+}
+
+.project-card:hover h3 {
+    color: #FF9800; /* hover orange */
 }
 
 .project-card p {
@@ -229,6 +249,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.skill-category.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .skill-category img {
@@ -257,6 +285,13 @@ body {
     font-size: 0.95rem;
     color: #1976D2;
     text-align: center;
+    transition: background 0.3s;
+    cursor: default;
+}
+
+.skill-card:hover {
+    background: #FF9800;
+    color: white;
 }
 
 /* Contact */
@@ -302,27 +337,3 @@ footer {
     color: #1976D2;
     font-weight: 600;
 }
-
-/* Scroll animations */
-.scroll-animate {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
-}
-
-.scroll-animate.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.timeline-item.scroll-animate.left { transform: translateX(-50px); }
-.timeline-item.scroll-animate.left.show { transform: translateX(0); }
-
-.timeline-item.scroll-animate.right { transform: translateX(50px); }
-.timeline-item.scroll-animate.right.show { transform: translateX(0); }
-
-.project-card.scroll-animate { transform: scale(0.95); }
-.project-card.scroll-animate.show { transform: scale(1); }
-
-.skill-category.scroll-animate { transform: translateY(30px); }
-.skill-category.scroll-animate.show { transform: translateY(0); }
