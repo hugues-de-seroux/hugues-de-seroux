@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-
 <!-- Hero -->
 <header class="hero">
     <div class="hero-content">
@@ -17,10 +16,12 @@
         <p class="subtitle">Bienvenue sur mon portfolio</p>
     </div>
 </header>
-
 <!-- Navigation -->
 <nav class="navbar">
-    <ul>
+    <button class="navbar-toggle" aria-label="Ouvrir le menu">
+        <i class="fas fa-bars"></i>
+    </button>
+    <ul class="navbar-menu">
         <li><a href="#profil">Profil</a></li>
         <li><a href="#parcours">Parcours Académique</a></li>
         <li><a href="#experiences">Expérience Professionnelle</a></li>
@@ -29,7 +30,6 @@
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
-
 <!-- Profil -->
 <section id="profil" class="section">
     <div class="container">
@@ -44,13 +44,12 @@
         </div>
     </div>
 </section>
-
 <!-- Parcours Académique -->
 <section id="parcours" class="section bg-light">
     <div class="container">
         <h2><i class="fas fa-graduation-cap"></i> Parcours Académique</h2>
         <div class="timeline">
-            <div class="timeline-item left scroll-animate">
+            <div class="timeline-item scroll-animate">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <img src="https://via.placeholder.com/80x80/0077b6/ffffff?text=ESILV" alt="Logo ESILV">
@@ -59,7 +58,7 @@
                     <p>ESILV, Paris-La Défense</p>
                 </div>
             </div>
-            <div class="timeline-item right scroll-animate">
+            <div class="timeline-item scroll-animate">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <img src="https://via.placeholder.com/80x80/0077b6/ffffff?text=RTU" alt="Logo RTU">
@@ -68,7 +67,7 @@
                     <p>Riga Technical University (RTU), Lettonie</p>
                 </div>
             </div>
-            <div class="timeline-item left scroll-animate">
+            <div class="timeline-item scroll-animate">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <img src="https://via.placeholder.com/80x80/0077b6/ffffff?text=Berthollet" alt="Logo Berthollet">
@@ -80,7 +79,6 @@
         </div>
     </div>
 </section>
-
 <!-- Expériences Professionnelles -->
 <section id="experiences" class="section">
     <div class="container">
@@ -104,7 +102,6 @@
         </div>
     </div>
 </section>
-
 <!-- Projets Académiques -->
 <section id="projets" class="section bg-light">
     <div class="container">
@@ -123,7 +120,6 @@
         </div>
     </div>
 </section>
-
 <!-- Compétences -->
 <section id="competences" class="section">
     <div class="container">
@@ -160,7 +156,6 @@
         </div>
     </div>
 </section>
-
 <!-- Contact -->
 <section id="contact" class="section bg-light">
     <div class="container">
@@ -170,21 +165,28 @@
             <p><i class="fas fa-phone"></i> 06 51 11 18 18</p>
             <p><i class="fas fa-envelope"></i> hugues.de_seroux@edu.devinci.fr</p>
             <div class="social-links">
-                <a href="https://linkedin.com/in/hugues-de-seroux"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/huguesde"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://linkedin.com/in/hugues-de-seroux" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/huguesde" target="_blank"><i class="fab fa-github"></i> GitHub</a>
             </div>
         </div>
     </div>
 </section>
-
 <footer>
     <p>© 2025 Hugues de Seroux | Portfolio CV</p>
 </footer>
-
-<!-- Script pour animations scroll réactivables -->
+<!-- Script pour animations scroll réactivables et navigation mobile -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const animateElements = document.querySelectorAll('.scroll-animate');
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const navbarMenu = document.querySelector('.navbar-menu');
+
+    // Toggle mobile menu
+    navbarToggle.addEventListener('click', function() {
+        navbarMenu.classList.toggle('active');
+    });
+
+    // Animate on scroll
     function checkPosition() {
         const windowHeight = window.innerHeight;
         animateElements.forEach(el => {
@@ -201,6 +203,5 @@ document.addEventListener('DOMContentLoaded', function() {
     checkPosition();
 });
 </script>
-
 </body>
 </html>
