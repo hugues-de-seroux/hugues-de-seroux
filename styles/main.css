@@ -225,10 +225,13 @@ body {
 }
 
 .project-card img {
-    width: 100%;
-    height: auto;
-    max-height: 180px;
-    object-fit: contain;
+    width: auto; /* La largeur s'ajuste automatiquement */
+    max-width: 100%; /* La largeur maximale est de 100% du conteneur */
+    height: auto; /* La hauteur s'ajuste automatiquement */
+    max-height: 100px; /* Définit une hauteur maximale pour éviter le flou dû à la mise à l'échelle */
+    object-fit: contain; /* Ajuste l'image pour qu'elle soit complètement visible, sans recadrage */
+    display: block; /* Assure que l'image utilise tout l'espace disponible */
+    margin: 0 auto; /* Centre l'image */
 }
 
 .project-card h3 {
