@@ -26,7 +26,7 @@ body {
 .hero {
     height: 80vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('images/ariane6.jpg')
+                url('https://github.com/hugues-de-seroux/hugues-de-seroux/blob/63f10d23571560f81fed155801689f531708d8e7/images/ariane6.jpg')
                 no-repeat center center;
     background-size: cover;
     display: flex;
