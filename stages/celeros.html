@@ -16,7 +16,6 @@
             margin: 0;
             padding: 0;
         }
-
         .stage-detail {
             max-width: 1200px;
             margin: 2rem auto;
@@ -25,12 +24,10 @@
             border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-
-        .stage-detail h1 {
+        .stage-detail h1, .stage-detail h2 {
             color: #007BFF;
             margin-bottom: 1rem;
         }
-
         .stage-detail img {
             width: 100%;
             max-height: 400px;
@@ -38,7 +35,19 @@
             border-radius: 5px;
             margin: 1rem 0;
         }
-
+        .section {
+            margin-bottom: 1.5rem;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section ul li {
+            background-color: #f1f1f1;
+            margin: 0.5rem 0;
+            padding: 0.8rem;
+            border-radius: 5px;
+        }
         .back-button {
             display: inline-block;
             margin: 2rem 0;
@@ -49,7 +58,6 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-
         .back-button:hover {
             background-color: #0056b3;
         }
@@ -57,14 +65,73 @@
 </head>
 <body>
     <div class="stage-detail">
-        <h1>Stage chez Celeros clyde Union Pump</h1>
-        <img src="https://via.placeholder.com/800x400/0077b6/ffffff?text=MBDA" alt="MBDA">
-        <p>
-            Pendant mon stage chez MBDA, j'ai travaillé sur l'optimisation numérique et la stratégie de recalage par analyse modale de circuits électroniques.
-        </p>
-        <p>
-            J'ai utilisé l'environnement ANSYS (Mechanical et optiSLang) pour mener à bien ce projet, ce qui m'a permis de développer mes compétences en simulation mécanique et en analyse modale.
-        </p>
+        <h1>Stage chez Celeros Clyde Union Pump</h1>
+
+        <!-- Contexte général -->
+        <div class="section">
+            <h2>Contexte général</h2>
+            <p>
+                La société Celeros Flow Technology opère dans le secteur industriel de la fabrication d’équipements de contrôle des fluides.
+                Elle conçoit, fabrique, installe et maintient des pompes, valves, filtres et fermetures pour des secteurs comme le pétrole & gaz,
+                l’énergie (nucléaire), et la marine (y compris la défense).
+            </p>
+        </div>
+
+        <!-- Sujet du projet -->
+        <div class="section">
+            <h2>Sujet du Projet</h2>
+            <p>
+                Mon stage s'inscrit dans le développement et la qualification d'une de leurs pompes hydrauliques et le traitement et suivi des essais de celle-ci.
+                Une deuxième partie du stage concernait la simulation numérique sur un modèle 3D d'hélice de gavage de pompe avec de la CFD.
+            </p>
+            <p>
+                Sujet du projet : Suivi d’essais thermiques et traitement de données sur un projet de pompes hydrauliques pour les nouvelles générations de centrales nucléaires et développement d’une hélice de gavage conceptuelle à l’aide de la CFD sur Ansys.
+            </p>
+        </div>
+
+        <!-- Responsabilités occupées -->
+        <div class="section">
+            <h2>Responsabilités occupées</h2>
+            <ul>
+                <li>Ingénieur Hydraulicien</li>
+            </ul>
+        </div>
+
+        <!-- Travail réalisé -->
+        <div class="section">
+            <h2>Travail réalisé</h2>
+            <ul>
+                <li>Suivi d'essais de qualification de pompe hydraulique</li>
+                <li>Suivi visuel des essais et vérification de la mise en œuvre</li>
+                <li>Traitement des données</li>
+                <li>Création d'un mini programme Python pour le traitement automatique des données des essais</li>
+                <li>Détermination d'une loi de comportement des températures à partir des essais expérimentaux de la pompe</li>
+                <li>Étude CFD d'un prototype hélice de gavage de pompe</li>
+                <li>Mise en place de la simulation du fluide à partir d'un modèle 3D d'hélice</li>
+                <li>Maillage du modèle 3D sur Ansys CFX</li>
+                <li>Comparaison des résultats de la simulation avec une hélice témoin</li>
+            </ul>
+        </div>
+
+        <!-- Résultats obtenus -->
+        <div class="section">
+            <h2>Résultats obtenus</h2>
+            <ul>
+                <li>Création d'un miniprogramme Python pour du traitement simplifié des données expérimentales</li>
+                <li>Première ébauche d'une loi de comportement des températures</li>
+                <li>Étude expérimentale d'un nouveau type d'hélice de gavage</li>
+            </ul>
+        </div>
+
+        <!-- Retour d'expérience -->
+        <div class="section">
+            <h2>Retour d'expérience</h2>
+            <p>
+                Ce stage m'a permis de développer mes compétences en simulation numérique et en traitement de données. J'ai également acquis une expérience précieuse en ingénierie hydraulique et en gestion de projets industriels complexes.
+            </p>
+        </div>
+
+        <img src="https://via.placeholder.com/800x400/0077b6/ffffff?text=Celeros" alt="Celeros Clyde Union Pump">
         <a href="../index.html" class="back-button">Retour au Portfolio</a>
     </div>
 </body>
