@@ -26,7 +26,7 @@ body {
 .hero {
     height: 80vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('https://mistralaiblackforestprod.blob.core.windows.net/images/blackforest/698e/746a/-8ac/4-460a-9d19-44fa4b3191a5/image.jpg')
+                url('images/ariane6.jpg')
                 no-repeat center center;
     background-size: cover;
     display: flex;
