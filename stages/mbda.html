@@ -16,7 +16,6 @@
             margin: 0;
             padding: 0;
         }
-
         .stage-detail {
             max-width: 1200px;
             margin: 2rem auto;
@@ -25,12 +24,10 @@
             border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-
-        .stage-detail h1 {
+        .stage-detail h1, .stage-detail h2 {
             color: #007BFF;
             margin-bottom: 1rem;
         }
-
         .stage-detail img {
             width: 100%;
             max-height: 400px;
@@ -38,7 +35,19 @@
             border-radius: 5px;
             margin: 1rem 0;
         }
-
+        .section {
+            margin-bottom: 1.5rem;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section ul li {
+            background-color: #f1f1f1;
+            margin: 0.5rem 0;
+            padding: 0.8rem;
+            border-radius: 5px;
+        }
         .back-button {
             display: inline-block;
             margin: 2rem 0;
@@ -49,7 +58,6 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-
         .back-button:hover {
             background-color: #0056b3;
         }
@@ -58,13 +66,60 @@
 <body>
     <div class="stage-detail">
         <h1>Stage chez MBDA</h1>
+
+        <!-- Contexte général -->
+        <div class="section">
+            <h2>Contexte général</h2>
+            <p>
+                MBDA est un groupe européen multinational spécialisé dans le domaine de la défense, et plus précisément leader mondial dans la conception, le développement et la fabrication de missiles et systèmes de missiles.
+                Mon stage s'inscrit dans une volonté de caractériser les propriétés matériaux de circuits imprimés pour améliorer les modèles numériques utilisés par le bureau d'étude.
+            </p>
+        </div>
+
+        <!-- Sujet du projet -->
+        <div class="section">
+            <h2>Sujet du Projet</h2>
+            <p>
+                Stage d'optimisation numérique et de stratégie de recalage par analyse modale de circuits électroniques.
+            </p>
+        </div>
+
+        <!-- Responsabilités occupées -->
+        <div class="section">
+            <h2>Responsabilités occupées</h2>
+            <ul>
+                <li>Ingénieur Simulation Numérique</li>
+            </ul>
+        </div>
+
+        <!-- Travail réalisé -->
+        <div class="section">
+            <h2>Travail réalisé</h2>
+            <ul>
+                <li>Optimisation de circuits imprimés</li>
+                <li>Traitement de données expérimentales</li>
+                <li>Mise en place de protocoles expérimentaux</li>
+                <li>Recalage de modèle numérique</li>
+            </ul>
+        </div>
+
+        <!-- Résultats obtenus -->
+        <div class="section">
+            <h2>Résultats obtenus</h2>
+            <ul>
+                <li>Aboutissement d'un protocole expérimental pour du recalage de circuits imprimés</li>
+            </ul>
+        </div>
+
+        <!-- Retour d'expérience -->
+        <div class="section">
+            <h2>Retour d'expérience</h2>
+            <p>
+                Ce stage m'a permis de renforcer mes compétences en simulation numérique et en analyse modale, tout en travaillant sur des projets critiques pour la défense. J'ai également acquis une expérience précieuse dans l'optimisation et le traitement des données expérimentales, ainsi que dans la mise en place de protocoles rigoureux.
+            </p>
+        </div>
+
         <img src="https://via.placeholder.com/800x400/0077b6/ffffff?text=MBDA" alt="MBDA">
-        <p>
-            Pendant mon stage chez MBDA, j'ai travaillé sur l'optimisation numérique et la stratégie de recalage par analyse modale de circuits électroniques.
-        </p>
-        <p>
-            J'ai utilisé l'environnement ANSYS (Mechanical et optiSLang) pour mener à bien ce projet, ce qui m'a permis de développer mes compétences en simulation mécanique et en analyse modale.
-        </p>
         <a href="../index.html" class="back-button">Retour au Portfolio</a>
     </div>
 </body>
